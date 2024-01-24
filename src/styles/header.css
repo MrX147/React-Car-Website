@@ -2,11 +2,13 @@
   padding: 10px 0px;
   background: #000d6b;
   color: #fff;
+  
 }
 
 .header__top__left {
   display: flex;
   align-items: center;
+  /* justify-content: space-between; */
   column-gap: 1rem;
 }
 
@@ -170,12 +172,19 @@
 }
 
 @media only screen and (max-width: 768px) {
-  .header__top,
+  .need-help,
   .header__middle,
   .nav__right {
     display: none;
   }
-
+  .header__top {
+    padding: 10px 0px;
+    background: #492E87;
+    color: #fff;
+  }
+  .header__top span{
+    font-size: 0.8rem;
+  }
   .mobile__menu {
     display: block;
   }
