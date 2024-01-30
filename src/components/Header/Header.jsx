@@ -14,10 +14,10 @@ const navLinks = [
     path: "/about",
     display: "About",
   },
-  {
-    path: "/cars",
-    display: "Cars",
-  },
+  // {
+  //   path: "/cars",
+  //   display: "Cars",
+  // },
 
   {
     path: "/reservation",
@@ -67,9 +67,7 @@ const Header = () => {
                 <h1>
                   <Link to="/home" className=" d-flex align-items-center gap-2">
                     <i class="ri-car-line"></i>
-                    <span>
-                      Shah Car <br /> Service
-                    </span>
+                    <span>Eagle Transportations</span>
                   </Link>
                 </h1>
               </div>

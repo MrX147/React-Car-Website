@@ -37,26 +37,27 @@ const Footer = () => {
     <footer className="footer">
       <Container>
         <Row>
-          <Col lg="4" md="4" sm="12">
+          <Col lg="6" md="4" sm="12">
             <div className="logo footer__logo">
               <h1>
                 <Link to="/home" className=" d-flex align-items-center gap-2">
                   <i class="ri-car-line"></i>
                   <span>
-                    Rent Car <br /> Service
+                    Eagle <br /> Transportations
                   </span>
                 </Link>
               </h1>
             </div>
             <p className="footer__logo-content">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Consequuntur, distinctio, itaque reiciendis ab cupiditate harum ex
-              quam veniam, omnis expedita animi quibusdam obcaecati mollitia?
-              Delectus et ad illo recusandae temporibus?
+              Experience the pinnacle of transportation excellence with Eagle
+              Transportations. From seamless airport transfers to luxury city
+              tours, trust us for safe, reliable, and unforgettable journeys.
+              Your satisfaction is our priority, ensuring every ride exceeds
+              expectations.
             </p>
           </Col>
 
-          <Col lg="2" md="4" sm="6">
+          <Col lg="3" md="4" sm="6">
             <div className="mb-4">
               <h5 className="footer__link-title">Quick Links</h5>
               <ListGroup>
@@ -81,7 +82,7 @@ const Footer = () => {
             </div>
           </Col>
 
-          <Col lg="3" md="4" sm="12">
+          {/* <Col lg="3" md="4" sm="12">
             <div className="mb-4">
               <h5 className="footer__link-title">Newsletter</h5>
               <p className="section__description">Subscribe our newsletter</p>
@@ -92,7 +93,7 @@ const Footer = () => {
                 </span>
               </div>
             </div>
-          </Col>
+          </Col> */}
 
           <Col lg="12">
             <div className="footer__bottom">

@@ -1,11 +1,18 @@
 .about__section-item {
-  column-gap: 3rem;
+  column-gap: 2rem;
 }
-
+/* .about__section-item p{
+  text-align: webkit center;
+  
+} */
 .about__section-item p i {
   color: #f9a826;
   font-size: 1.1rem;
+  margin: 1vw;
+  /* align-items: center; */
+ 
 }
+
 
 @media only screen and (max-width: 992px) {
   .about__section-content h2 {

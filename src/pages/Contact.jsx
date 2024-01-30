@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Container, Row, Col, Form, FormGroup, Input } from "reactstrap";
 import Helmet from "../components/Helmet/Helmet";
 import CommonSection from "../components/UI/CommonSection";
+import axios from "axios"; // Import axios for making HTTP requests
 
 import "../styles/contact.css";
 
@@ -26,6 +27,48 @@ const socialLinks = [
 ];
 
 const Contact = () => {
+  // State to manage form data
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  // Handler to update form data on user input
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  // Handler for form submission
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      // Replace with your server endpoint
+      const response = await axios.post(
+        "http://localhost:3001/submit-form",
+        formData
+      );
+
+      if (response.status === 200) {
+        // Handle success here
+        console.log("Message sent successfully!");
+        // Optionally, clear the form fields
+        setFormData({
+          name: "",
+          email: "",
+          message: "",
+        });
+      } else {
+        // Handle error
+        console.error("Failed to send message!");
+      }
+    } catch (error) {
+      console.error("Error sending message:", error);
+    }
+  };
+
   return (
     <Helmet title="Contact">
       <CommonSection title="Contact" />
@@ -34,23 +77,36 @@ const Contact = () => {
           <Row>
             <Col lg="7" md="7">
               <h6 className="fw-bold mb-4">Get In Touch</h6>
-
-              <Form>
+              <Form onSubmit={handleSubmit}>
                 <FormGroup className="contact__form">
-                  <Input placeholder="Your Name" type="text" />
+                  <Input
+                    placeholder="Your Name"
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                  />
                 </FormGroup>
                 <FormGroup className="contact__form">
-                  <Input placeholder="Email" type="email" />
+                  <Input
+                    placeholder="Email"
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                  />
                 </FormGroup>
                 <FormGroup className="contact__form">
                   <textarea
                     rows="5"
                     placeholder="Message"
                     className="textarea"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
                   ></textarea>
                 </FormGroup>
-
-                <button className=" contact__btn" type="submit">
+                <button className="contact__btn" type="submit">
                   Send Message
                 </button>
               </Form>
@@ -83,7 +139,7 @@ const Contact = () => {
                       key={index}
                       className="social__link-icon"
                     >
-                      <i class={item.icon}></i>
+                      <i className={item.icon}></i>
                     </Link>
                   ))}
                 </div>

@@ -32,17 +32,24 @@ const About = () => {
                 </h2>
 
                 <p className="section__description">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Eveniet veniam assumenda aperiam accusantium ex autem
-                  perferendis repellendus nostrum delectus. Nemo et dolore est
-                  tempore rem minima adipisci magni dolorum ipsam.
+                  Your safety is paramount at Eagle Transportations. We are
+                  committed to providing safe ride solutions with our fleet of
+                  insured vehicles, maintained to the highest standards by our
+                  skilled mechanics. Our professional chauffeurs undergo
+                  rigorous screening, ensuring that each driver meets our strict
+                  standards for reliability, professionalism, and expertise.
+                  Travel with peace of mind, knowing that your well-being is our
+                  top priority.
                 </p>
 
                 <p className="section__description">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Eveniet veniam assumenda aperiam accusantium ex autem
-                  perferendis repellendus nostrum delectus. Nemo et dolore est
-                  tempore rem minima adipisci magni dolorum ipsam.
+                  At Eagle Transportations, we go beyond the ordinary to ensure
+                  your journey is not only safe but also exceptional. Our
+                  commitment extends to regular vehicle inspections and
+                  stringent driver training programs, reinforcing our dedication
+                  to maintaining the highest standards in the industry. Trust us
+                  for a secure, reliable, and enjoyable transportation
+                  experience, where your peace of mind is our ultimate goal.
                 </p>
 
                 <div className=" d-flex align-items-center gap-3 mt-4">

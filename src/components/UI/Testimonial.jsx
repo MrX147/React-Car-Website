@@ -3,10 +3,11 @@ import Slider from "react-slick";
 
 import "../../styles/testimonial.css";
 
-import ava01 from "../../assets/all-images/ava-1.jpg";
-import ava02 from "../../assets/all-images/ava-2.jpg";
-import ava03 from "../../assets/all-images/ava-3.jpg";
-import ava04 from "../../assets/all-images/ava-4.jpg";
+// import ava01 from "../../assets/all-images/ava-1.jpg";
+// import ava02 from "../../assets/all-images/ava-2.jpg";
+// import ava03 from "../../assets/all-images/ava-3.jpg";
+// import ava04 from "../../assets/all-images/ava-4.jpg";
+import ava05 from "../../assets/all-images/ava-5.jpg";
 
 const Testimonial = () => {
   const settings = {
@@ -42,17 +43,16 @@ const Testimonial = () => {
     <Slider {...settings}>
       <div className="testimonial py-4 px-3">
         <p className="section__description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus magni
-          explicabo molestias recusandae repudiandae, dolor, sapiente placeat
-          ab, animi eum minima nulla facere aliquam aut vitae quo pariatur
-          voluptate odit?
+          "Whole City Tour with Eagle Transportations was amazing! Our guide,
+          shared fascinating insights. A memorable experience from start to
+          finish."
         </p>
 
         <div className="mt-3 d-flex align-items-center gap-4">
-          <img src={ava01} alt="" className="w-25 h-25 rounded-2" />
+          <img src={ava05} alt="" className="w-25 h-25 rounded-2" />
 
           <div>
-            <h6 className="mb-0 mt-3">Jhon Doe</h6>
+            <h6 className="mb-0 mt-3">Ethan Thompson</h6>
             <p className="section__description">Customer</p>
           </div>
         </div>
@@ -60,17 +60,15 @@ const Testimonial = () => {
 
       <div className="testimonial py-4 px-3">
         <p className="section__description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus magni
-          explicabo molestias recusandae repudiandae, dolor, sapiente placeat
-          ab, animi eum minima nulla facere aliquam aut vitae quo pariatur
-          voluptate odit?
+          "Many Pickup Locations made my travel convenient. Our driver, was
+          punctual and friendly. Eagle Transportations is my go-to choice!"
         </p>
 
         <div className="mt-3 d-flex align-items-center gap-4">
-          <img src={ava02} alt="" className="w-25 h-25 rounded-2" />
+          <img src={ava05} alt="" className="w-25 h-25 rounded-2" />
 
           <div>
-            <h6 className="mb-0 mt-3">Jhon Doe</h6>
+            <h6 className="mb-0 mt-3">Ryan Taylor</h6>
             <p className="section__description">Customer</p>
           </div>
         </div>
@@ -78,17 +76,15 @@ const Testimonial = () => {
 
       <div className="testimonial py-4 px-3">
         <p className="section__description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus magni
-          explicabo molestias recusandae repudiandae, dolor, sapiente placeat
-          ab, animi eum minima nulla facere aliquam aut vitae quo pariatur
-          voluptate odit?
+          "Fast & Easy Booking with Eagle Transportations was a game-changer.
+          The customer service rep, was efficient and helpful. Will book again!"
         </p>
 
         <div className="mt-3 d-flex align-items-center gap-4">
-          <img src={ava03} alt="" className="w-25 h-25 rounded-2" />
+          <img src={ava05} alt="" className="w-25 h-25 rounded-2" />
 
           <div>
-            <h6 className="mb-0 mt-3">Jhon Doe</h6>
+            <h6 className="mb-0 mt-3">Jessica Miller</h6>
             <p className="section__description">Customer</p>
           </div>
         </div>
@@ -96,17 +92,15 @@ const Testimonial = () => {
 
       <div className="testimonial py-4 px-3">
         <p className="section__description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus magni
-          explicabo molestias recusandae repudiandae, dolor, sapiente placeat
-          ab, animi eum minima nulla facere aliquam aut vitae quo pariatur
-          voluptate odit?
+          "Unlimited Miles Car Rental gave me the freedom to explore. Eagle
+          Transportations ensured a smooth rental process. Highly recommended!"
         </p>
 
         <div className="mt-3 d-flex align-items-center gap-4">
-          <img src={ava04} alt="" className="w-25 h-25 rounded-2" />
+          <img src={ava05} alt="" className="w-25 h-25 rounded-2" />
 
           <div>
-            <h6 className="mb-0 mt-3">Jhon Doe</h6>
+            <h6 className="mb-0 mt-3">Michael Davies</h6>
             <p className="section__description">Customer</p>
           </div>
         </div>
