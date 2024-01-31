@@ -1,8 +1,8 @@
+require("dotenv").config();
 const express = require("express");
 const nodemailer = require("nodemailer");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-require("dotenv").config();
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -11,15 +11,15 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+const sendgridApiKey = process.env.SENDGRID_API_KEY;
+console.log(sendgridApiKey);
 app.post("/submit-form", (req, res) => {
   console.log("Received form submission request");
 
   try {
     const formData = req.body;
-
-    // Your nodemailer logic here to send an email with form data
     const transporter = nodemailer.createTransport({
-      host: "smtp.sendgrid.net",
+      host: "smtp.gmail.com",
       // host: "gmail",
       // port: 465,
       // secure: true,
@@ -27,7 +27,7 @@ app.post("/submit-form", (req, res) => {
       secure: false,
       auth: {
         user: "apikey", // Use "apikey" as the user
-        pass: "", // Replace with your SendGrid API key
+        pass: sendgridApiKey, // Replace with your SendGrid API key
       },
       // tls: {
       //   rejectUnauthorized: true,
