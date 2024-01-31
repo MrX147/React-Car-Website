@@ -6,10 +6,6 @@ require("dotenv").config();
 
 const app = express();
 const PORT = process.env.PORT || 3001;
-const sgMail = require("@sendgrid/mail");
-sgMail.setApiKey(
-  "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"
-);
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -31,7 +27,7 @@ app.post("/submit-form", (req, res) => {
       secure: false,
       auth: {
         user: "apikey", // Use "apikey" as the user
-        pass: "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", // Replace with your SendGrid API key
+        pass: "", // Replace with your SendGrid API key
       },
       // tls: {
       //   rejectUnauthorized: true,
