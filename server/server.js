@@ -12,26 +12,20 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 const sendgridApiKey = process.env.SENDGRID_API_KEY;
-console.log(sendgridApiKey);
+
 app.post("/submit-form", (req, res) => {
   console.log("Received form submission request");
 
   try {
     const formData = req.body;
     const transporter = nodemailer.createTransport({
-      host: "smtp.gmail.com",
-      // host: "gmail",
-      // port: 465,
-      // secure: true,
+      host: "smtp.sendgrid.net",
       port: 587,
       secure: false,
       auth: {
         user: "apikey", // Use "apikey" as the user
         pass: sendgridApiKey, // Replace with your SendGrid API key
       },
-      // tls: {
-      //   rejectUnauthorized: true,
-      // },
     });
 
     const mailOptions = {
@@ -62,7 +56,6 @@ app.post("/submit-form", (req, res) => {
     res.status(500).send("Internal Server Error");
   }
 });
-
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
