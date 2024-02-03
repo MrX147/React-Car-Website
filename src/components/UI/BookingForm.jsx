@@ -18,6 +18,7 @@ const BookingForm = () => {
     additionalInfo: "",
   });
   const [showModal, setShowModal] = useState(false);
+  const [showErrorModal, setShowErrorModal] = useState(false);
 
   // Handler to update form data on user input
   const handleChange = (event) => {
@@ -60,9 +61,12 @@ const BookingForm = () => {
       } else {
         // Handle form submission error
         console.error("Form submission failed!");
+        const errorMessage = await response.text();
+        throw new Error(errorMessage);
       }
     } catch (error) {
       console.error("Error submitting form:", error);
+      setShowErrorModal(true);
     }
   };
 
@@ -197,6 +201,17 @@ const BookingForm = () => {
             Thank you for submitting your details! We've received your
             information and will be in touch shortly. We appreciate your
             interest and look forward to assisting you further
+          </p>
+        </div>
+      </div>
+      <div className={showErrorModal ? "modal show" : "modal"}>
+        <div className="modal-content">
+          <span className="close" onClick={() => setShowErrorModal(false)}>
+            &times;
+          </span>
+          <p>
+            Sorry, there was an error submitting the form. Please try again
+            later.
           </p>
         </div>
       </div>

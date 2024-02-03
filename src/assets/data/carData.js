@@ -17,7 +17,7 @@ const carData = [
     imgUrl: img01,
     model: "Model 3",
     price: 50,
-    speed: "20kmpl",
+    // speed: "20kmpl",
     gps: "GPS Navigation",
     seatType: "Heated seats",
     automatic: "Automatic",

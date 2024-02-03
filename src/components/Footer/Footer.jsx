@@ -4,21 +4,35 @@ import { Container, Row, Col, ListGroup, ListGroupItem } from "reactstrap";
 import { Link } from "react-router-dom";
 import "../../styles/footer.css";
 
+const socialLinks = [
+  {
+    url: "https://www.facebook.com/allyproperties.pk",
+    icon: "ri-facebook-line",
+  },
+  {
+    url: "#",
+    icon: "ri-instagram-line",
+  },
+  {
+    url: "#",
+    icon: "ri-linkedin-line",
+  },
+  {
+    url: "#",
+    icon: "ri-twitter-line",
+  },
+];
 const quickLinks = [
   {
     path: "/about",
     display: "About",
   },
 
-  {
-    path: "#",
-    display: "Privacy Policy",
-  },
+  // {
+  //   path: "#",
+  //   display: "Privacy Policy",
+  // },
 
-  {
-    path: "/cars",
-    display: "Car Listing",
-  },
   {
     path: "/reservation",
     display: "Reservation",
@@ -57,7 +71,7 @@ const Footer = () => {
             </p>
           </Col>
 
-          <Col lg="3" md="4" sm="6">
+          <Col lg="2" md="4" sm="6">
             <div className="mb-4">
               <h5 className="footer__link-title">Quick Links</h5>
               <ListGroup>
@@ -82,6 +96,25 @@ const Footer = () => {
             </div>
           </Col>
 
+          <Col lg="1" md="4" sm="12">
+            <h6 className="fw-bold text-white">Follow Us</h6>
+            <div className="mb-4">
+              <div className="d-flex align-items-center gap-4 mt-3">
+                {socialLinks.map((item, index) => (
+                  <a
+                    href={item.url}
+                    key={index}
+                    className="social__link-icon-con"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i className={item.icon}></i>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </Col>
+
           {/* <Col lg="3" md="4" sm="12">
             <div className="mb-4">
               <h5 className="footer__link-title">Newsletter</h5>
@@ -98,8 +131,8 @@ const Footer = () => {
           <Col lg="12">
             <div className="footer__bottom">
               <p className="section__description d-flex align-items-center justify-content-center gap-1 pt-4">
-                <i class="ri-copyright-line"></i>Copyright {year}, Developed by
-                Syed Shahzeb. All rights reserved.
+                <i class="ri-copyright-line"></i>Copyright {year} | Eagle
+                Transportaions Pvt Ltd By Web Development Team.
               </p>
             </div>
           </Col>

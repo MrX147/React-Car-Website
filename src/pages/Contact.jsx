@@ -32,7 +32,11 @@ const Contact = () => {
     name: "",
     email: "",
     message: "",
+    phoneNumber: "",
   });
+
+  const [showModal, setShowModal] = useState(false);
+  const [showErrorModal, setShowErrorModal] = useState(false);
 
   // Handler to update form data on user input
   const handleChange = (event) => {
@@ -54,21 +58,25 @@ const Contact = () => {
       if (response.status === 200) {
         // Handle success here
         console.log("Message sent successfully!");
+        setShowModal(true);
         // Optionally, clear the form fields
         setFormData({
           name: "",
           email: "",
           message: "",
+          phoneNumber: "",
         });
       } else {
         // Handle error
         console.error("Failed to send message!");
+        const errorMessage = await response.text();
+        throw new Error(errorMessage);
       }
     } catch (error) {
       console.error("Error sending message:", error);
+      setShowErrorModal(true);
     }
   };
-
   return (
     <Helmet title="Contact">
       <CommonSection title="Contact" />
@@ -85,6 +93,7 @@ const Contact = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
+                    required
                   />
                 </FormGroup>
                 <FormGroup className="contact__form">
@@ -94,8 +103,21 @@ const Contact = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
+                    required
                   />
                 </FormGroup>
+                <FormGroup className="contact__form">
+                  <Input
+                    placeholder="Phone Number"
+                    type="text"
+                    inputMode="numeric"
+                    name="phoneNumber"
+                    value={formData.phoneNumber}
+                    onChange={handleChange}
+                    required
+                  />
+                </FormGroup>
+
                 <FormGroup className="contact__form">
                   <textarea
                     rows="5"
@@ -105,10 +127,35 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleChange}
                   ></textarea>
+                  <button className="contact__btn" type="submit">
+                    Send Message
+                  </button>
                 </FormGroup>
-                <button className="contact__btn" type="submit">
-                  Send Message
-                </button>
+                <div className={showModal ? "modal show" : "modal"}>
+                  <div className="modal-content">
+                    <span className="close" onClick={() => setShowModal(false)}>
+                      &times;
+                    </span>
+                    <p>
+                      Thank you for sending us a message! We've received your
+                      information and will be in touch shortly.
+                    </p>
+                  </div>
+                </div>
+                <div className={showErrorModal ? "modal show" : "modal"}>
+                  <div className="modal-content">
+                    <span
+                      className="close"
+                      onClick={() => setShowErrorModal(false)}
+                    >
+                      &times;
+                    </span>
+                    <p>
+                      Sorry, there was an error submitting the form. Please try
+                      again later.
+                    </p>
+                  </div>
+                </div>
               </Form>
             </Col>
 
