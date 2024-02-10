@@ -4,6 +4,8 @@ import { Container, Row, Col, ListGroup, ListGroupItem } from "reactstrap";
 import { Link } from "react-router-dom";
 import "../../styles/footer.css";
 
+import Logo01 from "../../assets/all-images/Logo-1.png";
+
 const socialLinks = [
   {
     url: "https://www.facebook.com/allyproperties.pk",
@@ -55,10 +57,13 @@ const Footer = () => {
             <div className="logo footer__logo">
               <h1>
                 <Link to="/home" className=" d-flex align-items-center gap-2">
-                  <i class="ri-car-line"></i>
+                  {/* <i class="ri-car-line"></i>
                   <span>
                     Eagle <br /> Transportations
-                  </span>
+                  </span> */}
+                  <div className="my-logo">
+                    <img src={Logo01} alt="" className="" />
+                  </div>
                 </Link>
               </h1>
             </div>
@@ -71,7 +76,7 @@ const Footer = () => {
             </p>
           </Col>
 
-          <Col lg="2" md="4" sm="6">
+          <Col lg="2" md="4" sm="4">
             <div className="mb-4">
               <h5 className="footer__link-title">Quick Links</h5>
               <ListGroup>
@@ -84,7 +89,7 @@ const Footer = () => {
             </div>
           </Col>
 
-          <Col lg="3" md="4" sm="6">
+          <Col lg="3" md="4" sm="4">
             <div className="mb-4">
               <h5 className="footer__link-title mb-4">Head Office</h5>
               <p className="office__info">Kurri Road, Rawalpindi, Pakistan</p>
@@ -96,7 +101,7 @@ const Footer = () => {
             </div>
           </Col>
 
-          <Col lg="1" md="4" sm="12">
+          <Col lg="1" md="4" sm="4">
             <h6 className="fw-bold text-white">Follow Us</h6>
             <div className="mb-4">
               <div className="d-flex align-items-center gap-4 mt-3">

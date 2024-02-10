@@ -5,6 +5,9 @@ import { Link, NavLink } from "react-router-dom";
 import "../../styles/header.css";
 import { MdEmail } from "react-icons/md";
 
+import Logo01 from "../../assets/all-images/Logo-1.png";
+import Logo02 from "../../assets/all-images/Logo-2.png";
+
 const navLinks = [
   {
     path: "/home",
@@ -40,7 +43,7 @@ const Header = () => {
       <div className="header__top">
         <Container>
           <Row>
-            <Col lg="6" md="6" sm="6">
+            <Col lg="8" md="8" sm="8">
               <div className="header__top__left">
                 <span className="need-help">Need Help?</span>
                 <span className="header__top__help">
@@ -49,7 +52,7 @@ const Header = () => {
                 <span className="react-icon1">
                   <MdEmail />
                 </span>
-                <span className="header__top__help">
+                <span className="header__top__help2">
                   Syed.Shazeb90@gmail.com
                 </span>
               </div>
@@ -62,18 +65,15 @@ const Header = () => {
       <div className="header__middle">
         <Container>
           <Row>
-            <Col lg="4" md="3" sm="4">
-              <div className="logo">
-                <h1>
-                  <Link to="/home" className=" d-flex align-items-center gap-2">
-                    <i class="ri-car-line"></i>
-                    <span>Eagle Transportations</span>
-                  </Link>
-                </h1>
-              </div>
+            <Col lg="3" md="3" sm="3">
+              <Link to="/home" className="">
+                <span className="my-logo">
+                  <img src={Logo02} alt="" className="" />
+                </span>
+              </Link>
             </Col>
 
-            <Col lg="3" md="3" sm="4">
+            <Col lg="3" md="3" sm="3">
               <div className="header__location d-flex align-items-center gap-2">
                 <span>
                   <i class="ri-earth-line"></i>
@@ -85,7 +85,7 @@ const Header = () => {
               </div>
             </Col>
 
-            <Col lg="3" md="3" sm="4">
+            <Col lg="3" md="3" sm="3">
               <div className="header__location d-flex align-items-center gap-2">
                 <span>
                   <i class="ri-time-line"></i>
@@ -98,12 +98,12 @@ const Header = () => {
             </Col>
 
             <Col
-              lg="2"
+              lg="3"
               md="3"
-              sm="0"
+              sm="3"
               className=" d-flex align-items-center justify-content-end "
             >
-              <button className="header__btn btn ">
+              <button className="header__btn my-btn">
                 <Link to="/contact">
                   <i class="ri-phone-line"></i> Request a call
                 </Link>
@@ -117,13 +117,28 @@ const Header = () => {
 
       <div className="main__navbar">
         <Container>
-          <div className="navigation__wrapper d-flex align-items-center justify-content-between">
+          <div className="navigation__wrapper  align-items-center justify-content-between">
             <span className="mobile__menu">
+              <Col lg="4" md="4" sm="4">
+                <Link to="/home" className="  ">
+                  <span className="my-logo-menu">
+                    <img src={Logo01} alt="" className="" />
+                  </span>
+                </Link>
+              </Col>
               <i class="ri-menu-line" onClick={toggleMenu}></i>
             </span>
 
             <div className="navigation" ref={menuRef} onClick={toggleMenu}>
               <div className="menu">
+                <Row lg="0" md="4" sm="4">
+                  <Link to="/home" className=" ">
+                    <span className="my-logo-inside">
+                      <img src={Logo02} alt="" className="" />
+                    </span>
+                  </Link>
+                </Row>
+
                 {navLinks.map((item, index) => (
                   <NavLink
                     to={item.path}
